@@ -13,20 +13,20 @@ $hat-gradient: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58,
     @media (max-width: 767px) {
         max-width: 480px;
 
-        background-image: $hat-gradient, url('../../images/hat_480_1x.jpg');
+        background-image: $hat-gradient, url('../images/hat_480_1x.jpg');
 
         @media (min-device-pixel-ratio: 2), (min-resolution: 2dppx), (min-resolution: 192dpi) {
-            background-image: $hat-gradient, url('../../images/hat_480_2x.jpg');
+            background-image: $hat-gradient, url('../images/hat_480_2x.jpg');
         }
     }
 
     @media (min-width: 768px) and (max-width: 1199px) {
         width: 768px;
 
-        background-image: $hat-gradient, url('../../images/hat_768_1x.jpg');
+        background-image: $hat-gradient, url('../images/hat_768_1x.jpg');
 
         @media (min-device-pixel-ratio: 2), (min-resolution: 2dppx), (min-resolution: 192dpi) {
-            background-image: $hat-gradient, url('../../images/hat_768_2x.jpg');
+            background-image: $hat-gradient, url('../images/hat_768_2x.jpg');
         }
     }
 
@@ -35,10 +35,10 @@ $hat-gradient: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58,
         padding-top: 200px;
         padding-bottom: 200px;
 
-        background-image: $hat-gradient, url('../../images/hat_1600_1x.jpg');
+        background-image: $hat-gradient, url('../images/hat_1600_1x.jpg');
 
         @media (min-device-pixel-ratio: 2), (min-resolution: 2dppx), (min-resolution: 192dpi) {
-            background-image: $hat-gradient, url('../../images/hat_1600_2x.jpg');
+            background-image: $hat-gradient, url('../images/hat_1600_2x.jpg');
         }    
     }
 
