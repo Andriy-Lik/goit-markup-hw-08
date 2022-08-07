@@ -1,0 +1,380 @@
+$hat-gradient: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4));
+
+.hat__overlay {
+    display: block;
+    width: 100%;
+    padding-top: 118px;
+    padding-bottom: 118px;
+    margin-left: auto;
+    margin-right: auto;
+
+    background: $hero-bgc;
+    
+    @media (max-width: 767px) {
+        max-width: 480px;
+
+        background-image: $hat-gradient, url('../../images/hat_480_1x.jpg');
+
+        @media (min-device-pixel-ratio: 2), (min-resolution: 2dppx), (min-resolution: 192dpi) {
+            background-image: $hat-gradient, url('../../images/hat_480_2x.jpg');
+        }
+    }
+
+    @media (min-width: 768px) and (max-width: 1199px) {
+        width: 768px;
+
+        background-image: $hat-gradient, url('../../images/hat_768_1x.jpg');
+
+        @media (min-device-pixel-ratio: 2), (min-resolution: 2dppx), (min-resolution: 192dpi) {
+            background-image: $hat-gradient, url('../../images/hat_768_2x.jpg');
+        }
+    }
+
+    @media (min-width: 1200px) {
+        max-width: 1600px;
+        padding-top: 200px;
+        padding-bottom: 200px;
+
+        background-image: $hat-gradient, url('../../images/hat_1600_1x.jpg');
+
+        @media (min-device-pixel-ratio: 2), (min-resolution: 2dppx), (min-resolution: 192dpi) {
+            background-image: $hat-gradient, url('../../images/hat_1600_2x.jpg');
+        }    
+    }
+
+    
+}
+
+.hat__title { 
+    margin-top: 0;
+    margin-bottom: 30px;
+
+    color: $main-color;
+
+    font-weight: 900;
+    font-size: 26px;
+    line-height: 1.615;
+    text-align: center;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+
+    @media (min-width: 1200px) {
+        font-size: 44px;
+        line-height: 1.4;    
+    }
+}
+
+.button {
+    display: flex;    
+    min-width: 200px;
+    min-height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    border-color: transparent;
+
+    background-color: $accent-color;
+    color: $main-color;
+    
+    font-family: inherit;    
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.875;    
+    letter-spacing: 0.06em;
+
+    cursor: pointer;
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {    
+        background-color: $hover-color;
+    }
+}
+
+
+
+.hat-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 1;
+
+    opacity: 1;
+
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hat-backdrop.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+}
+
+.hat-backdrop.is-hidden .hat-modal {
+    transform: translate(-50%, -50%) scale(0.1);
+}
+
+.hat-modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+
+    width: calc(100% - 30px);    
+    padding: 40px;
+
+    @media (min-width: 480px) {
+        width: 450px;    
+    }
+
+    @media (min-width: 1200px) {
+        width: 528px;
+    }
+    
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 
+                0px 1px 1px rgba(0, 0, 0, 0.14), 
+                0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    background-color: $main-color;
+
+    transform: translate(-50%, -50%) scale(1);
+
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hat-modal__button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 30px;
+    height: 30px;
+    margin-top: 8px;
+    margin-right: 8px;
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    color: $logo-color;
+    background-color: $main-color;
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {
+        color: $accent-color;
+    }
+}
+
+.hat-modal__icon {
+    fill: currentColor;
+}
+
+.hat-form {
+    width: 100%;
+}
+
+.hat-form__title {
+    margin-top: 0;
+    margin-bottom: 12px;
+
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.5;
+    /*line-height: 1.15;*/
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: $primary-color;
+}
+
+.hat-form__field {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    color: $primary-color;
+
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hat-form__label {
+    margin-bottom: 4px;
+    text-align: left;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.167;
+    letter-spacing: 0.01em;
+    color: $second-color;
+}
+
+.hat-form__input {
+    height: 40px;
+    padding: 12px 43px;
+    outline-style: none;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hat-form__icon {
+    position: absolute;
+    top: 29px;
+    left: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    fill: currentColor;
+
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {
+        fill: $accent-color;
+    }
+}
+
+
+.hat-form__input:hover,
+.hat-form__input:focus,
+.hat-form__textarea:hover,
+.hat-form__textarea:focus {
+    outline-style: none;
+    border-color: $accent-color;
+    cursor: pointer;
+}
+
+.hat-form__input:hover + .hat-form__icon,
+.hat-form__input:focus + .hat-form__icon {
+    fill: $accent-color;
+}
+
+.hat-form__text {
+    margin-bottom: 20px;    
+}
+
+.hat-form__textarea {
+    height: 120px;
+    padding: 12px 16px;
+
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    resize: none;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.01em;
+    color: rgba(117, 117, 117, 0.5);
+
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:not(:placeholder-shown) {
+        color: $primary-color;
+        font-size: 16px;
+    }
+}
+
+.hat-form__checkbox {
+    position: relative;
+    /*width: 423px;
+    height: 24px;
+    margin-left: auto;
+    margin-right: auto;*/
+    margin-bottom: 30px;
+}
+
+.hat-form__checkbox-label {
+    display: flex;
+    align-items: center;
+}
+
+.hat-form__checkbox-input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.hat-form__checkbox-icon {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    border: 2px solid $border-color;
+    border-radius: 2px;
+}
+
+.hat-form__checkbox-text {
+    margin-left: 24px;   
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.167;    
+    letter-spacing: 0.03em;
+
+    @media (min-width: 1200px) {
+        font-size: 14px;
+        line-height: 1.714;
+    }
+
+    color: $second-color;
+}
+
+.hat-form__checkbox-input:checked + .hat-form__checkbox-icon {
+    border:none;
+    background-color: $accent-color;
+}
+
+.hat-form__checkbox-link {
+    margin-left: 2px;
+    outline-style: none;
+    color: $accent-color;    
+}
+
+.hat-form__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 200px;
+    min-height: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    
+    background: $accent-color;
+    color: $main-color;
+
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.875;
+    letter-spacing: 0.06em;
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    border: none;
+
+    cursor: pointer;
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus { 
+        outline-style: none;   
+        background-color: $hover-color;
+    }
+}

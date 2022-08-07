@@ -1,0 +1,216 @@
+.portfolio__title {
+    display: none;
+}
+
+.filter {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+
+    @media (max-width: 767px) {
+        margin-bottom: 40px;
+        justify-content: flex-start;
+        flex-wrap: wrap;    
+    }
+
+    @media (min-width: 768px) and (max-width: 1199px) {
+        margin-bottom: 30px;
+    }
+}
+
+.filter__item {
+
+    &:not(:first-child) {
+        margin-left: 8px; 
+    }
+     
+    &:nth-child(2n + 1) {
+        @media (max-width: 363px) {
+            margin-left: 0;
+        }
+    }
+
+    &:nth-child(2) {
+        @media (min-width: 356px) and (max-width: 363px) {
+            margin-right: 8px;
+        }
+    }
+
+    &:nth-child(3) {
+        @media (min-width: 472px) and (max-width: 767px) {
+            margin-right: 20px;
+        }
+    }
+
+    &:nth-child(4n) {
+        @media (min-width: 364px) and (max-width: 767px) {
+            margin-left: 0;
+        } 
+    }
+    
+    &:nth-child(-n + 3) {
+        @media (max-width: 767px) {
+            margin-bottom: 15px;
+        } 
+    }
+}
+
+.filter__button {
+    min-width: 73px;
+    padding: 6px 22px;   
+    margin: auto;
+    align-items: center;
+    border-radius: 4px;
+    border-color: transparent;
+
+    background-color: $team-bgc;
+    color: $primary-color;    
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: center;
+    letter-spacing: 0.03em;
+    
+    cursor: pointer;
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &.current,
+    &:hover,
+    &:focus {
+    background-color: $accent-color;
+    color: $main-color;
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);    
+    }
+}
+
+.projects {
+    @media (min-width: 768px) {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.projects__item {
+    
+    @media (max-width: 767px) {
+        max-width: 450px;
+    }
+
+    @media (min-width: 768px) and (max-width: 1199px) {
+        width: 354px;
+    }
+
+    @media (min-width: 1200px) {
+        width: 370px;
+    }
+
+    &:not(:last-child) {
+        @media (max-width: 1199px) {
+            margin-bottom: 30px;  
+        }
+    }
+
+    &:nth-child(2n) {
+        @media (min-width: 768px) and (max-width: 1199px) {
+            margin-left: 30px;  
+        }
+    }
+
+    @media (min-width: 1200px) {
+        margin-bottom: 30px;
+        margin-right: 30px;
+    }
+
+    &:nth-child(n+7) {
+        @media (min-width: 1200px) {
+            margin-bottom: 0px;
+        }
+    }
+    
+    &:nth-child(3n) {
+        @media (min-width: 1200px) {
+            margin-right: 0px;
+        }
+    }
+    
+    &:hover,
+    &:focus {
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+    }
+
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.projects__overlay-box {
+    position: relative;
+    overflow: hidden;
+}
+
+.projects__pic {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.projects__overlay {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 24px;
+
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.56;
+    letter-spacing: 0.03em;
+
+    @media (max-width: 479px) {
+        font-size: 14px;
+    }
+
+    color: $main-color;
+    background-color: rgba(33, 150, 243, 0.9);
+
+    transform: translateY(100%);
+
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.projects__item:hover .projects__overlay {
+    transform: translateY(0);
+}
+
+.projects__blok {
+    padding: 20px 10px 20px 24px;
+    border-right: 1px solid #EEEEEE;
+    border-left: 1px solid #EEEEEE;
+    border-bottom: 1px solid #EEEEEE;
+}
+
+.projects__title {
+    margin-top: 0;
+    margin-bottom: 4px;
+
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 2;
+    letter-spacing: 0.06em;
+}
+
+.projects__text {
+    margin-top: 0;
+    margin-bottom: 0;
+
+    color: $second-color;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.9;
+    letter-spacing: 0.03em;
+}

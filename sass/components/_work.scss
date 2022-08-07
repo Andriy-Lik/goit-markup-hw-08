@@ -1,0 +1,47 @@
+.work {
+    padding-top: 0;
+    @media (max-width: 1199px) {
+        display: none;
+    }
+}
+
+.work__title {
+    @extend %title;
+}
+
+.work__list {
+    display: flex;
+}
+
+.work__item + .work__item {
+    margin-left: 30px;
+}
+
+.work__item {
+    position: relative;
+}
+
+.work__img {    
+    display: block;
+}
+
+.work__label {
+    position: absolute;
+    bottom: 0;
+
+    width: 100%;
+    padding-top: 27px;
+    padding-bottom: 27px;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    background-color: rgba(47, 48, 58, 0.8);
+    color: $main-color;
+
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.143;
+    text-align: center;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}

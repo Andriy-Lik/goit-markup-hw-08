@@ -1,0 +1,135 @@
+.team {
+    background-color: $team-bgc;
+}
+
+.team__title {
+    @extend %title;
+}
+
+.team__list {
+    @media screen and (min-width: 768px) {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.team__list-item {
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 4px 4px;
+
+    @media (max-width: 767px) {
+        max-width: 450px;
+        width: calc(100%);
+    }
+    
+    @media (min-width: 768px) {
+        width: 354px;
+    }
+
+    @media (min-width: 1200px) {
+        width: 270px;   
+    }
+
+    &:not(:last-child) {
+        @media screen and (max-width: 767px) {
+            margin-bottom: 30px;  
+        }
+    }
+
+    &:nth-child(2n) {
+        @media (min-width: 768px) and (max-width: 1199px) {
+            margin-left: 30px;  
+        }
+    }
+
+    &:nth-child(-n + 2) {
+        @media (min-width: 768px) and (max-width: 1199px) {
+            margin-bottom: 30px;
+        }
+    }
+
+    &:not(:first-child) {
+        @media (min-width: 1200px) {
+            margin-left: 30px;  
+        }
+    }
+}
+
+.team__pic {
+    display: block;
+    width: 100%;
+}
+
+.team__blok {
+    padding-top: 30px;
+    padding-bottom: 30px;    
+    background-color: $main-color;
+
+    @media screen and (max-width: 1199px) {
+        padding-bottom: 24px;  
+    }
+}
+
+
+.team__name {
+    margin-top: 0;
+    margin-bottom: 10px;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.19;
+    text-align: center;
+    letter-spacing: 0.03em;
+}
+
+.team__career {
+    margin-top: 0;
+    margin-bottom: 16px;
+
+    color: $second-color;
+    
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.19;
+    text-align: center;
+    letter-spacing: 0.03em;
+}
+
+.team-social__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
+
+.team-social__item {
+    margin-bottom: 0;
+    height: 44px;
+    width: 44px;
+}
+
+.team-social__item + .team-social__item {
+    margin-left: 10px;   
+}
+
+.team-social__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    
+    color: $icon-color;
+    border-radius: 50%;
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {    
+        background-color: $accent-color;
+        color: $main-color;
+    }
+}
+
+.team-social__icon { 
+    fill: currentColor;    
+}
